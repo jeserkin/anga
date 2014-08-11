@@ -2,8 +2,8 @@
   "dataSource": "proxy",
   "proxies": [
     {
-      "context": "/pma-web/api",
-      "host": "ml663.webmedia.int",
+      "context": "/app-name/api",
+      "host": "localhost",
       "port": 8080,
       "https": false
     },
