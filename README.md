@@ -6,6 +6,7 @@ Install:
 * [Node.js (ver. ~0.10)](http://nodejs.org/)
 * [Grunt (ver. ~0.4)](http://gruntjs.com/)
 * [Bower](http://bower.io/)
+* [Ruby](https://www.ruby-lang.org/en/downloads/) and [Sass](http://sass-lang.com/install)
 
 ### Fetch dependencies
 ```shell
