@@ -253,7 +253,7 @@ module.exports = function(grunt) {
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
-        root: '<%= yeoman.app %>'
+        root: '<%= yeoman.dist %>'
       }
     },
 
@@ -404,6 +404,9 @@ module.exports = function(grunt) {
         files: {
           '<%= yeoman.dist %>/scripts/scripts.js': [
             '<%= yeoman.dist %>/scripts/scripts.js'
+          ],
+          '<%= yeoman.dist %>/scripts/vendor.js': [
+            '<%= yeoman.dist %>/scripts/vendor.js'
           ]
         }
       }
@@ -502,8 +505,8 @@ module.exports = function(grunt) {
     'ngmin',
     'copy:dist',
     'cssmin',
-//    'uglify',
-    'sassToCss',
+    'uglify',
+    //'sassToCss',
     'filerev',
     'usemin',
     'clean:distModules'

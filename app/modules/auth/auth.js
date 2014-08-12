@@ -1,7 +1,7 @@
 angular.module('anga.auth', ['ngRoute', 'ngResource', 'anga.config'])
 
     .config(function($httpProvider) {
-      $httpProvider.interceptors.push(function($q, $rootScope) {
+      $httpProvider.interceptors.push(['$q', '$rootScope', function($q, $rootScope) {
         return {
           'responseError': function(rejection) {
             if (rejection.status === 401) {
@@ -10,7 +10,7 @@ angular.module('anga.auth', ['ngRoute', 'ngResource', 'anga.config'])
             return $q.reject(rejection);
           }
         };
-      });
+      }]);
     })
 
     .service('AuthService', function($window, $http, $resource, $location, config) {
