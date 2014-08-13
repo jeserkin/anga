@@ -10,6 +10,7 @@ exports.mockData = function(req, res, next) {
 }
 
 function handleGet(req, res, next) {
+  // TODO: support API prefix defined in config
   if (req.url.substring(0, 4) === '/api') {
     req.url = req._parsedUrl.pathname + '.json'; // strip query params
     res.setHeader('Content-Type', 'application/json');

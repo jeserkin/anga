@@ -1,5 +1,5 @@
 angular.module('anga.config', [])
   .constant('config', {
-    api: 'pma-web',
+    api: '',
     title: 'Angular Template'
   });
