@@ -7,7 +7,7 @@ exports.mockData = function(req, res, next) {
       handlePost(req, res);
       break;
   }
-}
+};
 
 function handleGet(req, res, next) {
   // TODO: support API prefix defined in config

@@ -7,5 +7,5 @@ angular.module('anga.samples', ['ngResource', 'anga.config'])
           });
     })
     .controller('SamplesCtrl', function($scope, $resource, config) {
-      $scope.list = $resource(config.api + '/api/v1/examples').query();
+      $scope.list = $resource(config.api + '/api/v1/questions').query();
     });
