@@ -138,7 +138,7 @@ module.exports = function(grunt) {
           {
             dot: true,
             src: [
-              '.tmp2',
+              '.tmp',
               '<%= yeoman.dist %>/*',
               '!<%= yeoman.dist %>/.git*'
             ]
@@ -246,14 +246,14 @@ module.exports = function(grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
+        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images', '<%= yeoman.dist %>/fonts']
       }
     },
 
     // The following *-min tasks produce minified files in the dist folder
     cssmin: {
       options: {
-        root: '<%= yeoman.dist %>'
+        root: '<%= yeoman.app %>'
       }
     },
 
@@ -360,6 +360,13 @@ module.exports = function(grunt) {
             cwd: '.tmp/images',
             dest: '<%= yeoman.dist %>/images',
             src: ['generated/*']
+          },
+          {
+            expand: true,
+            /*flatten: true,*/ // Temporary hack to copy fonts with bower_component-like structure. Otherwise font file names are revved incorrectly.
+            cwd: '<%= yeoman.app %>',
+            dest: '<%= yeoman.dist %>',
+            src: ['bower_components/{,*/}*/fonts/*']
           }
         ]
       },
