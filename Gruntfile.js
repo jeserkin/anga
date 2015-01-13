@@ -7,7 +7,7 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: '0.0.0.0',
         livereload: 35729,
-        middleware: function(connect, options, middlewares) {
+        middleware: function (connect, options, middlewares) {
           if (props.dataSource === 'proxy') {
             middlewares.push(require('grunt-connect-proxy/lib/utils').proxyRequest);
           } else if (props.dataSource === 'mock') {
@@ -470,11 +470,26 @@ module.exports = function(grunt) {
           }
         ]
       }
+    },
+
+    tags: {
+      build: {
+        options: {
+          scriptTemplate: '<script src="{{ path }}"></script>',
+          openTag: '<!-- start script tags -->',
+          closeTag: '<!-- end script tags -->'
+        },
+        src: [
+          '<%= yeoman.app %>/**/*.js',
+          '!<%= yeoman.app %>/bower_components/**/*.js'
+        ],
+        dest: '<%= yeoman.app %>/index.html'
+      }
     }
+
   });
 
-
-  grunt.registerTask('serve', function(target) {
+  grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'configureProxies:server', 'connect:dist:keepalive']);
     }
@@ -483,6 +498,7 @@ module.exports = function(grunt) {
       'clean:server',
       'replace:dev',
       'wiredep',
+      'tags',
       'concurrent:server',
       'autoprefixer',
       'configureProxies:server',
@@ -491,7 +507,7 @@ module.exports = function(grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function(target) {
+  grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
@@ -502,6 +518,7 @@ module.exports = function(grunt) {
     'clean:dist',
     'replace:production',
     'wiredep',
+    'tags',
     'useminPrepare',
     'htmlmin',
     'html2js',
