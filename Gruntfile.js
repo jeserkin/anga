@@ -472,17 +472,19 @@ module.exports = function (grunt) {
       }
     },
 
-    tags: {
-      build: {
-        options: {
-          scriptTemplate: '<script src="{{ path }}"></script>',
-          openTag: '<!-- start script tags -->',
-          closeTag: '<!-- end script tags -->'
-        },
-        src: [
-          '<%= yeoman.app %>/modules/**/*.js'
-        ],
-        dest: '<%= yeoman.app %>/index.html'
+    includeSource: {
+      options: {
+        basePath: 'app',
+        templates: {
+          html: {
+            js: '<script src="{filePath}"></script>'
+          }
+        }
+      },
+      myTarget: {
+        files: {
+          'app/index.html': 'app/index.html'
+        }
       }
     }
 
@@ -497,7 +499,7 @@ module.exports = function (grunt) {
       'clean:server',
       'replace:dev',
       'wiredep',
-      'tags',
+      'includeSource',
       'concurrent:server',
       'autoprefixer',
       'configureProxies:server',
@@ -517,7 +519,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'replace:production',
     'wiredep',
-    'tags',
+    'includeSource',
     'useminPrepare',
     'htmlmin',
     'html2js',
