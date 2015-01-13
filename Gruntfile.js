@@ -481,7 +481,7 @@ module.exports = function (grunt) {
           }
         }
       },
-      myTarget: {
+      main: {
         files: {
           'app/index.html': 'app/index.html'
         }
