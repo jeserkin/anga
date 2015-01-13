@@ -480,8 +480,7 @@ module.exports = function (grunt) {
           closeTag: '<!-- end script tags -->'
         },
         src: [
-          '<%= yeoman.app %>/**/*.js',
-          '!<%= yeoman.app %>/bower_components/**/*.js'
+          '<%= yeoman.app %>/modules/**/*.js'
         ],
         dest: '<%= yeoman.app %>/index.html'
       }
