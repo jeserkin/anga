@@ -1,4 +1,4 @@
-angular.module('anga.auth', ['ngRoute', 'ngResource', 'anga.config'])
+angular.module('anga.auth', [])
 
     .config(function($httpProvider) {
       $httpProvider.interceptors.push(['$q', '$rootScope', function($q, $rootScope) {

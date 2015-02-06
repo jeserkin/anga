@@ -1,4 +1,4 @@
-angular.module('anga.layout', ['anga.auth', 'templates-main', 'ngRoute', 'anga.config'])
+angular.module('anga.layout', [])
     .controller('HeaderCtrl', function($scope, $rootScope, $location, AuthService, $window, config) {
 
       $rootScope.$on('CAS_LOGIN', function() {

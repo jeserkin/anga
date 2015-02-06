@@ -4,9 +4,13 @@ angular
     .module('anga', [
       'ngResource',
       'ngRoute',
-      'anga.layout',
-      'anga.auth',
+
       'anga.config',
+      'anga.auth',
+
+      'templates-main',
+
+      'anga.layout',
       'anga.samples'
     ])
     .config(function($routeProvider) {

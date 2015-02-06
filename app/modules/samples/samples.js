@@ -1,4 +1,4 @@
-angular.module('anga.samples', ['ngResource', 'anga.config'])
+angular.module('anga.samples', [])
     .config(function($routeProvider) {
       $routeProvider
           .when('/samples', {
