@@ -405,6 +405,19 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
+    ngAnnotate: {
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/scripts/scripts.js': [
+            '<%= yeoman.dist %>/scripts/scripts.js'
+          ],
+          '<%= yeoman.dist %>/scripts/vendor.js': [
+            '<%= yeoman.dist %>/scripts/vendor.js'
+          ]
+        }
+      }
+    },
+
     uglify: {
       dist: {
         files: {
@@ -529,6 +542,7 @@ module.exports = function (grunt) {
     'ngmin',
     'copy:dist',
     'cssmin',
+    'ngAnnotate',
     'uglify',
     //'sassToCss',
     'filerev',
