@@ -15,24 +15,18 @@ angular
   ]);
 
 angular.module('anga')
-  .config(AngaConfig);
-
-// @ngInject
-function AngaConfig($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'modules/core/main.html',
-      controller: 'MainCtrl'
-    })
-    .otherwise({
-      redirectTo: '/'
-    });
-}
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'modules/core/main.html',
+        controller: 'MainCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
 
 angular.module('anga')
-  .controller('MainCtrl', MainCtrl);
-
-// @ngInject
-function MainCtrl($scope, AuthService) {
-  $scope.session = AuthService.getAuthSession();
-}
+  .controller('MainCtrl', function ($scope, AuthService) {
+    $scope.session = AuthService.getAuthSession();
+  });
