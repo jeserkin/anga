@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: CoreCtrl', function () {
+describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('eSfosApp'));
+  beforeEach(module('anga'));
 
   var CoreCtrl,
       scope;
@@ -11,7 +11,7 @@ describe('Controller: CoreCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope    = $rootScope.$new();
-    CoreCtrl = $controller('CoreCtrl', {
+    CoreCtrl = $controller('MainCtrl', {
       $scope: scope
     });
   }));
