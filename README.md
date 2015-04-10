@@ -1,6 +1,6 @@
 # aNGa - Template for angular projects
 
-[![Build Status](https://travis-ci.org/nortal/anga.svg?branch=master)](https://travis-ci.org/nortal/j-road)
+[![Build Status](https://travis-ci.org/nortal/anga.svg?branch=master)](https://travis-ci.org/nortal/anga)
 
 ## Quick Start Guide
 ### Environment Setup
