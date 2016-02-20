@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/nortal/anga.svg?branch=master)](https://travis-ci.org/nortal/anga)
 
+## This is a test
+## Another One
 ## Quick Start Guide
 ### Environment Setup
 Install: 
